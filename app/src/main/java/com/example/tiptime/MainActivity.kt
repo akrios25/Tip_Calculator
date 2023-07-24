@@ -1,14 +1,13 @@
 package com.example.tiptime
 
-import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.tiptime.databinding.ActivityMainBinding
 import java.text.NumberFormat
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding.calculateButton.setOnClickListener { calculateTip() }
     }
 
-    fun calculateTip() {
+    private fun calculateTip() {
         val stringInTextField = binding.costOfService.text.toString()
         val cost = stringInTextField.toDoubleOrNull()
         if (cost == null) {
